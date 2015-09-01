@@ -22,10 +22,7 @@
     },
     "dependencies": {
       "python": {
-        "pymongo": "==3.0.3"
-      },
-      "debian": {
-        "mongodb": ""
+        "pydotplus": ">=2.0.2"
       }
     }
   },
