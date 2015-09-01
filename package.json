@@ -1,0 +1,35 @@
+{
+  "name": "caleydo_data_graph_dot",
+  "version": "0.0.1",
+  "license" : "SEE LICENSE IN LICENSE",
+  "repository": "Caleydo/caleydo_data_graph_dot",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "caleydo_graph": "*"
+  },
+  "caleydo": {
+    "plugins": {
+      "python": [
+        {
+          "type": "graph-parser",
+          "id": "parser-dot",
+          "file": "dot",
+          "format": "dot",
+          "factory": "parse_dot"
+        }
+      ]
+    },
+    "dependencies": {
+      "python": {
+        "pymongo": "==3.0.3"
+      },
+      "debian": {
+        "mongodb": ""
+      }
+    }
+  },
+  "publishConfig": {
+    "registry": "http://registry.caleydo.org/"
+  }
+}
