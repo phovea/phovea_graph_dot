@@ -1,30 +1,38 @@
 
 import pydotplus
 
-def to_node(n):
+def _to_node(n):
   name = n.get_name()
   attrs = n.get_attributes()
 
-  if 'type' in attrs:
-    t = attrs['type']
-    del attrs['type']
-  else:
-    t = 'node'
+  r = dict(id=name, type='node', attrs=attrs)
+  for inline in ['type','description']:
+    if inline in attrs:
+      r[inline] = attrs[inline]
+      del attrs[inline]
 
-  return dict(id=name, type=t, attrs=attrs)
+  return r
 
-def to_edge(link, nodes):
+def _resolve_name(args, f):
+  if 'name' in args:
+    return args['name']
+  fn = f.filename
+  import os.path
+  name, ext = os.path.splitext(os.path.basename(fn))
+  return name
+
+def _to_edge(link):
   source = link.get_source()
   target = link.get_destination()
   attrs = link.get_attributes()
 
-  if 'type' in attrs:
-    t = attrs['type']
-    del attrs['type']
-  else:
-    t = 'node'
+  r = dict(type='edge', attrs=attrs, source=source, target=target)
+  for inline in ['type','description']:
+    if inline in attrs:
+      r[inline] = attrs[inline]
+      del attrs[inline]
 
-  return dict(type=t, attrs=attrs, source=nodes[source], target=nodes[target])
+  return r
 
 def parse_dot(args, files):
   if len(files) == 0:
@@ -33,7 +41,7 @@ def parse_dot(args, files):
   content = files[0].read()
   g = pydotplus.parse_dot_data(content)
 
-  nodes = { n['id'] : n for n in (to_node(n) for n in g.get_nodes()) }
-  edges = [to_edge(e,nodes) for e in g.get_edges()]
+  nodes = [_to_node(n) for n in g.get_nodes()]
+  edges = [_to_edge(e) for e in g.get_edges()]
 
-  return dict(nodes=nodes.values(), edges=edges)
+  return dict(name=_resolve_name(args, files[0]), nodes=nodes, edges=edges)
