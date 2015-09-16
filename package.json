@@ -22,7 +22,7 @@
     },
     "dependencies": {
       "python": {
-        "pydotplus": ">=2.0.2"
+        "pydotplus": "==2.0.2"
       }
     }
   },
