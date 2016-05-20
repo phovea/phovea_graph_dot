@@ -1,5 +1,6 @@
-{
+{ 
   "name": "caleydo_data_graph_dot",
+  "description": "Graph DOT-File Format Parser",
   "version": "0.0.1",
   "license" : "SEE LICENSE IN LICENSE",
   "repository": "Caleydo/caleydo_data_graph_dot",
@@ -9,6 +10,8 @@
     "caleydo_server": "*"
   },
   "caleydo": {
+    "type": "plugin",
+    "category": "python_utility",
     "plugins": {
       "python": [
         {
