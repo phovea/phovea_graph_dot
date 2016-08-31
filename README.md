@@ -5,6 +5,9 @@ Parser for graph files in [DOT format](https://en.wikipedia.org/wiki/DOT_(graph_
 
 Installation
 ------------
+
+[Set up a virtual machine using Vagrant](http://www.caleydo.org/documentation/vagrant/) and run these commands inside the virtual machine:
+
 ```bash
 ./manage.sh clone Caleydo/caleydo_graph_dot
 ./manage.sh resolve
@@ -12,7 +15,7 @@ Installation
 
 If you want this plugin to be dynamically resolved as part of another application of plugin, you need to add it as a peer dependency to the _package.json_ of the application or plugin it should belong to:
 
-```bash
+```json
 {
   "peerDependencies": {
     "caleydo_graph_dot": "*"
