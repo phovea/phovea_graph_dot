@@ -1,6 +1,6 @@
 {
   "files": [
-    "src",
+    "phovea_data_graph_dot",
     "__init__.py",
     "__main__.py",
     "build",
