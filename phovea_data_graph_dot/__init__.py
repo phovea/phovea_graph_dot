@@ -10,10 +10,11 @@ def phovea(registry):
   register extension points
   :param registry:
   """
-  registry.append('graph-parser','parser-dot','phovea_data_graph_dot.dot', {
-   'format': 'dot',
-   'factory': 'parse_dot'
-  })
+  registry.append('graph-parser', 'parser-dot', 'phovea_data_graph_dot.dot',
+                  {
+                      'format': 'dot',
+                      'factory': 'parse_dot'
+                  })
   pass
 
 
