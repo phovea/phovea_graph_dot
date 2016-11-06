@@ -1,0 +1,32 @@
+{
+  "generator-phovea": {
+    "type": "server",
+    "name": "phovea_data_graph_dot",
+    "author": "The Caleydo Team",
+    "githubAccount": "phovea",
+    "modules": [
+      "phovea_server"
+    ],
+    "extensions": [],
+    "sextensions": [
+      {
+        "type": "graph-parser",
+        "id": "parser-dot",
+        "module": "dot",
+        "extras": {
+          "format": "dot",
+          "factory": "parse_dot"
+        }
+      }
+    ],
+    "libraries": [],
+    "unknown": {
+      "requirements": [
+        "pydotplus==2.0.2"
+      ],
+      "debianPackages": [],
+      "redhatPackages": []
+    },
+    "today": "Wed, 02 Nov 2016 18:01:10 GMT"
+  }
+}
