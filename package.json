@@ -20,7 +20,7 @@
   "name": "phovea_data_graph_dot",
   "description": "Graph DOT-File Format Parser",
   "homepage": "https://phovea.caleydo.org",
-  "version": "0.0.1",
+  "version": "0.0.1-SNAPSHOT",
   "author": {
     "name": "The Caleydo Team",
     "email": "contact@caleydo.org",
