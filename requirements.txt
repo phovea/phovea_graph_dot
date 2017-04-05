@@ -1,2 +1,2 @@
--e git+https://github.com/phovea/phovea_server.git#egg=phovea_server
 pydotplus==2.0.2
+phovea_server==0.1.0
