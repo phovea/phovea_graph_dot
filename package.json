@@ -15,7 +15,7 @@
     "pretest": "npm run check",
     "test": "test ! -d tests || python setup.py test",
     "predist": "npm run build && npm run docs",
-    "dist": "python setup.py bdist_egg",
+    "dist": "python setup.py bdist_egg && cd build && tar cvzf ../dist/phovea_data_graph_dot.tar.gz *",
     "docs": "sphinx-apidoc -o docs -f ./phovea_data_graph_dot && sphinx-build ./docs build/docs",
     "prebuild": "node -e \"process.exit(process.env.PHOVEA_SKIP_TESTS === undefined?1:0)\" || npm run test",
     "build": "python build.py"
